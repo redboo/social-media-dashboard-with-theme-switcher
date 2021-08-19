@@ -1,0 +1,170 @@
+@use '../util' as *;
+@use "sass:math";
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: rem(-15);
+  flex-direction: column;
+
+  @include breakpoint(medium) {
+    flex-direction: row;
+  }
+}
+
+.card {
+  $gap: rem(30);
+  background: var(--dark-card);
+  color: var(--dark-text1);
+  text-align: center;
+  padding: rem(32) rem(31) rem(24);
+  border-radius: rem(5);
+  margin: math.div($gap, 2);
+  position: relative;
+  width: auto;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--dark-card-hover);
+  }
+  &:focus {
+    background: var(--dark-card-focus);
+    transform: scale(1.05);
+  }
+
+  @include breakpoint(medium) {
+    width: calc(50% - #{$gap});
+  }
+  @include breakpoint(large) {
+    width: calc(25% - #{$gap});
+  }
+
+  &::after {
+    content: "";
+    height: rem(5);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: rem(5) rem(5) 0 0;
+  }
+
+  &.facebook::after {
+    background: var(--facebook);
+  }
+  &.twitter::after {
+    background: var(--twitter);
+  }
+  &.instagram::after {
+    background: linear-gradient(
+      225deg,
+      var(--instagram-end),
+      var(--instagram-middle) 50.91%,
+      var(--instagram-start) 100%
+    );
+  }
+  &.youtube::after {
+    background: var(--youtube);
+  }
+
+  .platform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(20);
+    margin-bottom: rem(25);
+  }
+
+  .subtitle {
+    font-size: rem(14);
+    font-weight: 700;
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 0;
+    width: rem(20);
+    height: rem(20);
+
+    &.facebook::before {
+      content: url("../images/icon-facebook.svg");
+    }
+    &.twitter::before {
+      content: url("../images/icon-twitter.svg");
+    }
+    &.instagram::before {
+      content: url("../images/icon-instagram.svg");
+    }
+    &.youtube::before {
+      content: url("../images/icon-youtube.svg");
+    }
+  }
+
+  .username {
+    font-weight: 700;
+    font-size: rem(12);
+    margin-left: rem(9);
+    letter-spacing: 1px;
+  }
+
+  .followers {
+    margin-bottom: rem(25);
+  }
+
+  .count {
+    color: var(--light-bg);
+    font-weight: 700;
+ 
+    line-height: 1;
+
+    &.small {
+      font-size: rem(32);
+      line-height: 0.9;
+      margin-top: rem(7);
+      letter-spacing: 0;
+    }
+    &.big {
+      letter-spacing: rem(-2);
+      margin-bottom: rem(4);
+      font-size: rem(56);
+    }
+  }
+
+  .label {
+    color: var(--dark-text1);
+    font-size: rem(12);
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: rem(5);
+  }
+
+  .change {
+    font-size: rem(12);
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.up {
+      color: var(--limegreen);
+      &:before {
+        content: url("../images/icon-up.svg");
+      }
+    }
+    &.down {
+      color: var(--brightred);
+      &:before {
+        content: url("../images/icon-down.svg");
+      }
+    }
+
+    &.down:before,
+    &.up:before {
+      font-size: 0;
+      margin-right: rem(4);
+    }
+  }
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/favicon-32x32.png" sizes="32x32" type="image/png">
+
+  <title>Fem dashboards</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+
+  <link rel="stylesheet" href="./dist/style.css">
+  <script defer src="./dist/script.js"></script>
+</head>
+
+<body>
+  <header class="header container">
+    <div class="header__title">
+      <h1>Social Media Dashboard</h1>
+      <span class="header__subtitle">Total Followers: 23,004</span>
+    </div>
+
+    <fieldset class="header__toggle toggle" aria-label="theme toggle" role="radiogroup">
+      <div class="toggle__wrapper">
+        <input type="radio" name="theme" id="dark">
+        <input type="radio" name="theme" id="system" checked>
+        <input type="radio" name="theme" id="light">
+        <span aria-hidden="true" class="toggle__background"></span>
+        <span aria-hidden="true" class="toggle__button"></span>
+      </div>
+      <label for="dark">Dark</label>
+      <label for="system">System</label>
+      <label for="light">Light</label>
+    </fieldset>
+  </header>
+  <main>
+    <!-- Cards -->
+    <section class="container">
+      <div class="cards">
+        <!-- Facebook -->
+        <div class="card facebook" tabindex="0">
+          <div class="platform">
+            <div class="icon facebook"></div>
+            <div class="username">@natanf</div>
+          </div>
+          <div class="followers">
+            <div class="count big">1987</div>
+            <div class="label">Followers</div>
+          </div>
+          <div class="change up">12 Today</div>
+        </div>
+        <!-- Twitter -->
+        <div class="card twitter" tabindex="0">
+          <div class="platform">
+            <div class="icon twitter"></div>
+            <div class="username">@natanf</div>
+          </div>
+          <div class="followers">
+            <div class="count big">1044</div>
+            <div class="label">Followers</div>
+          </div>
+          <div class="change up">99 Today</div>
+        </div>
+        <!-- Instagram -->
+        <div class="card instagram" tabindex="0">
+          <div class="platform">
+            <div class="icon instagram"></div>
+            <div class="username">@realnatanf</div>
+          </div>
+          <div class="followers">
+            <div class="count big">11k</div>
+            <div class="label">Followers</div>
+          </div>
+          <div class="change up">1099 Today</div>
+        </div>
+        <!-- YouTube -->
+        <div class="card youtube" tabindex="0">
+          <div class="platform">
+            <div class="icon youtube"></div>
+            <div class="username">Nathan F.</div>
+          </div>
+          <div class="followers">
+            <div class="count big">8239</div>
+            <div class="label">Subscribers</div>
+          </div>
+          <div class="change down">144 Today</div>
+        </div>
+      </div>
+    </section>
+    <!-- Cards-grid -->
+    <section class="container">
+      <h2>Overview - Today</h2>
+      <div class="cards">
+        <!-- Facebook -->
+        <div class="card card-grid" tabindex="0">
+          <div class="subtitle">Page Views</div>
+          <div class="icon facebook"></div>
+          <div class="count small">87</div>
+          <div><span class="change up">3%</span></div>
+        </div>
+        <div class="card card-grid" tabindex="0">
+          <div class="subtitle">Likes</div>
+          <div class="icon facebook"></div>
+          <div class="count small">52</div>
+          <div><span class="change down">2%</span></div>
+        </div>
+        <!-- Instagram -->
+        <div class="card card-grid" tabindex="0">
+          <div class="subtitle">Likes</div>
+          <div class="icon instagram"></div>
+          <div class="count small">5462</div>
+          <div><span class="change up">2257%</span></div>
+        </div>
+        <div class="card card-grid" tabindex="0">
+          <div class="subtitle">Profile Views</div>
+          <div class="icon instagram"></div>
+          <div class="count small">52k</div>
+          <div><span class="change up">1375%</span></div>
+        </div>
+        <!-- Twitter -->
+        <div class="card card-grid" tabindex="0">
+          <div class="subtitle">Retweets</div>
+          <div class="icon twitter"></div>
+          <div class="count small">117</div>
+          <div><span class="change up">303%</span></div>
+        </div>
+        <div class="card card-grid" tabindex="0">
+          <div class="subtitle">Likes</div>
+          <div class="icon twitter"></div>
+          <div class="count small">507</div>
+          <div><span class="change up">553%</span></div>
+        </div>
+        <!-- YouTube -->
+        <div class="card card-grid" tabindex="0">
+          <div class="subtitle">Likes</div>
+          <div class="icon youtube"></div>
+          <div class="count small">107</div>
+          <div><span class="change down">19%</span></div>
+        </div>
+        <div class="card card-grid" tabindex="0">
+          <div class="subtitle">Total Views</div>
+          <div class="icon youtube"></div>
+          <div class="count small">1407</div>
+          <div><span class="change down">12%</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">redboo</a>
+  </div>
+</body>
+
+</html>
